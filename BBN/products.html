@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: white;
+            padding: 20px 0;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            height: 80px;
+            margin-right: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00; /* Highlight color on hover */
+            text-decoration: underline; /* Underline on hover for emphasis */
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .product-item {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s; /* Animation for hover effect */
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+        }
+
+        .product-item img {
+            width: 150px; /* Fixed width for images */
+            height: auto;
+            border-radius: 8px;
+            margin-right: 20px; /* Spacing between image and text */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        .product-description {
+            flex: 1; /* Take remaining space */
+            display: flex;
+            flex-direction: column; /* Stack heading, paragraph, and video */
+            justify-content: center; /* Center items vertically */
+        }
+
+        h3 {
+            margin: 0 0 10px; /* Space below heading */
+            color: #444; /* Darker color for headings */
+        }
+
+        p {
+            margin: 0 0 10px; /* Space below paragraph */
+            color: #555; /* Slightly lighter color for paragraph */
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .footer-info, .footer-links, .footer-contact {
+            flex: 1; /* Each takes equal width */
+            margin: 0 10px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin: 5px 0;
+        }
+
+        .footer-links ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s; /* Smooth color transition */
+        }
+
+        .footer-links ul li a:hover {
+            color: #ffcc00; /* Highlight color on hover */
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 10px;
+        }
+
+        /* Custom classes for left and right alignment */
+        .left {
+            flex-direction: row; /* Align items left */
+            justify-content: flex-start; /* Align items to the left */
+        }
+
+        .right {
+            flex-direction: row-reverse; /* Align items right */
+            justify-content: flex-start; /* Align items to the right */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Company Logo">
+                <span class="logo-name">BABA BHAIRAVNATH</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>Products We Offer</h2>
+
+        <div class="product-item left">
+            <img src="images/aggarbatti.jpg" alt="Aggarbatti" onclick="openModal('aggarbatti')">
+            <div class="product-description">
+                <h3>Aggarbatti</h3>
+                <p>High-quality incense sticks for your spiritual needs.</p>
+            </div>
+        </div>
+
+        <div class="product-item right">
+            <img src="images/paper-dish.jpg" alt="Paper Dish" onclick="openModal('paper-dish')">
+            <div class="product-description">
+                <h3>Paper Dishes</h3>
+                <p>Eco-friendly and disposable paper dishes for any occasion.</p>
+            </div>
+        </div>
+
+        <div class="product-item left">
+            <img src="images/paper-bowl.jpg" alt="Paper Bowl" onclick="openModal('paper-bowl')">
+            <div class="product-description">
+                <h3>Paper Bowls</h3>
+                <p>Perfect for serving snacks and meals in a sustainable way.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal for Video Display -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <video id="modal-video" controls style="width: 100%; border-radius: 8px;">
+                <source id="video-source" src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h4>About Us </h4><br>
+                <p>We specialize in manufacturing eco-friendly agarbatti, durable paper dishes, and versatile paper bowls. Our commitment to quality, sustainability, and customer satisfaction drives us to continuously innovate and improve our offerings.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4><br>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4><br>
+                <p>Email: avishwakarma9999@gmail.com</p>
+                <p>Phone: 9970659919 / 8169070778</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BABA BHAIRAVNATH. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function openModal(product) {
+            const modal = document.getElementById("myModal");
+            const videoSource = document.getElementById("video-source");
+            const videoElement = document.getElementById("modal-video");
+
+            // Set the video source based on the clicked product
+            switch (product) {
+                case 'aggarbatti':
+                    videoSource.src = "videos/aggarbatti.mp4"; // Replace with the correct video path
+                    break;
+                case 'paper-dish':
+                    videoSource.src = "videos/paper-dish.mp4"; // Replace with the correct video path
+                    break;
+                case 'paper-bowl':
+                    videoSource.src = "videos/paper-bowl.mp4"; // Replace with the correct video path
+                    break;
+            }
+            videoElement.load(); // Load the new video source
+            modal.style.display = "block"; // Show the modal
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none"; // Hide the modal
+        }
+
+        // Close the modal if the user clicks anywhere outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background-color: #fff; /* Background color for header */
+    padding: 10px 0; /* Padding for header */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: relative; /* Ensure the header is positioned for absolute elements */
+}
+
+.header-container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between logo and nav */
+    max-width: 1200px; /* Maximum width for header */
+    margin: 0 auto; /* Center the header */
+    padding: 0 20px; /* Horizontal padding */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* Center logo vertically */
+}
+.logo-name {
+    font-size: 20px; /* Logo name size */
+    font-weight: bold; /* Make logo name bold */
+    color: black; /* Logo name color */
+}
+.logo img {
+    width: 80px; /* Logo width */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between logo image and name */
+}
+
+nav {
+    flex: 1; /* Allow nav to take available space */
+}
+
+nav ul {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Horizontal layout */
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: flex-end; /* Align items to the right */
+    padding: 0; /* Remove padding */
+}
+
+nav ul li {
+    margin-left: 20px; /* Space between nav items */
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Color for nav links */
+    font-weight: 700; /* Bold font for nav links */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Stack logo and nav vertically */
+        align-items: flex-start; /* Align items to start */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: flex-start; /* Align items to the left */
+        width: 100%; /* Full width */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Space between items */
+        margin-left: 0; /* Remove left margin */
+    }
+}
+
+/* Welcome Section Styles */
+.welcome-section {
+    position: relative; /* Position for absolute text overlay */
+    overflow: hidden; /* Hide overflow */
+}
+
+.welcome-image img {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Block display */
+}
+
+.welcome-text {
+    position: absolute; /* Position text over the image */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position */
+    color: white; /* White text */
+    text-align: center; /* Center text */
+    padding: 20px; /* Padding around text */
+}
+
+/* About Section Styles */
+.about-section {
+    background-color: #f9f9f9; /* Light background for contrast */
+    padding: 60px 20px; /* Top and bottom padding */
+    text-align: center; /* Centered text */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 40px auto; /* Margin to separate from other sections */
+    max-width: 900px; /* Maximum width for the section */
+}
+
+.about-section h2 {
+    font-size: 2.5em; /* Larger font size for the section title */
+    margin-bottom: 20px; /* Space below the title */
+    color: #333; /* Darker color for the title */
+    font-weight: 700; /* Bold weight for the title */
+    text-transform: uppercase; /* Uppercase for emphasis */
+    letter-spacing: 1px; /* Slightly increased letter spacing */
+}
+
+.about-section p {
+    font-size: 12px; /* Slightly larger font size for paragraphs */
+    line-height: 1.7; /* Increased line height for readability */
+    margin-bottom: 30px; /* Space below paragraphs */
+    color: #555; /* Medium gray color for text */
+}
+
+.about-section h3 {
+    font-size: 1.8em; /* Medium font size for subheadings */
+    margin-top: 30px; /* Space above subheadings */
+    color: #333; /* Darker gray for subheadings */
+    font-weight: 600; /* Semi-bold for subheadings */
+    border-bottom: 2px solid #ffcc00; /* Bottom border for emphasis */
+    padding-bottom: 10px; /* Space below the subheading */
+}
+
+.about-section ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    text-align: left; /* Align text to the left for the list */
+    max-width: 600px; /* Max width for the list */
+    margin: 0 auto; /* Center align the list */
+}
+
+.about-section ul li {
+    font-size: 12px; /* Font size for list items */
+    margin-bottom: 10px; /* Space below list items */
+    color: #444; /* Dark gray for list items */
+    position: relative; /* For the custom bullet */
+    padding-left: 20px; /* Space for the custom bullet */
+}
+
+.about-section ul li::before {
+    content: ''; /* Empty content for the bullet */
+    position: absolute; /* Position it relative to the list item */
+    left: 0; /* Align to the left */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust position */
+    width: 8px; /* Width of the bullet */
+    height: 8px; /* Height of the bullet */
+    background-color: #ffcc00; /* Color for the bullet */
+    border-radius: 50%; /* Make it a circle */
+}
+
+/* Products Section Styles */
+.products-section {
+    display: flex;
+    flex-direction: column; /* Stack products vertically */
+    padding: 40px 20px; /* Padding for the section */
+    margin: 40px auto; /* Margin for spacing */
+    max-width: 1200px; /* Set a max width for larger screens */
+}
+
+.product-item {
+    display: flex; /* Flexbox for product item */
+    margin-bottom: 40px; /* Space between product items */
+}
+
+.product-content {
+    display: flex;
+    align-items: center; /* Center vertically */
+    width: 100%; /* Full width of the item */
+}
+
+.product-content img {
+    width: 20%; /* Adjust image width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    margin-right: 20px; /* Space between image and description */
+}
+
+.product-description {
+    text-align: left; /* Align text to the left for descriptions */
+}
+
+/* Specific styles for left and right alignment */
+.product-content.left {
+    flex-direction: row; /* Image on the left, text on the right */
+}
+
+.product-content.right {
+    flex-direction: row-reverse; /* Image on the right, text on the left */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .product-item {
+        width: calc(48% - 40px); /* Adjust to two products in a row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-item {
+        width: calc(100% - 40px); /* Stack products vertically on small screens */
+        align-self: center; /* Center items on small screens */
+    }
+}
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 60px 20px; /* Top and bottom padding */
+    text-align: center; /* Centered text */
+}
+
+.form-container {
+    max-width: 600px; /* Max width for form container */
+    margin: 0 auto; /* Center align form */
+    background-color: #f9f9f9; /* Light background */
+    padding: 20px; /* Padding for form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.form-container label {
+    display: block; /* Block display for labels */
+    margin-bottom: 5px; /* Space below labels */
+    font-weight: bold; /* Bold weight for labels */
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 15px; /* Space below inputs */
+    border: 1px solid #ccc; /* Border for inputs */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.form-container button {
+    background-color: #ffcc00; /* Button color */
+    color: white; /* Button text color */
+    padding: 10px 15px; /* Padding for button */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor for button */
+    font-weight: bold; /* Bold text for button */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 12px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footer-info, .footer-links, .footer-contact {
+    max-width: 30%; /* Adjust width for footer sections */
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+/* Mobile Styles for Welcome Text */
+@media (max-width: 768px) {
+    .welcome-text {
+        font-size: 10px; /* Smaller font size for mobile view */
+        padding: 10px; /* Adjust padding for mobile */
+    }
+}
